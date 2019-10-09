@@ -1,4 +1,5 @@
-### (Work in progress) # Hugo-Svelte app
+### (Work in progress) 
+# Hugo-Svelte app
 
 This is a project template for [Svelte](https://svelte.dev) and [Hugo](https://gohugo.io) apps. It lives at https://gitlab.com/datwood/hugo-svelte.
 
