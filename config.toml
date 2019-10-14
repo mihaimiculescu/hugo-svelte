@@ -1,3 +1,18 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Hugo Svelte POC"
+
+archetypeDir = "visible/svelte/archetypes"
+assetDir = "visible/svelte/assets"
+# cacheDir = "cache" #may change in the future
+contentDir = "visible/svelte/content"
+dataDir = "visible/svelte/data"
+enableInlineShortcodes = true #this is false by default
+layoutDir = "visible/svelte/layouts"
+publishDir = "visible/svelte/public"
+relativeURLs = true #this is false by default
+resourceDir = "visible/svelte/resources" #may change in the future
+staticDir = "visible/svelte/static"
+themesDir = "visible/svelte/themes"
+#The following statement will cause Hugo to ignore files ending with .foo and .boo when rendering:
+#ignoreFiles = [ "\\.foo$", "\\.boo$" ]
