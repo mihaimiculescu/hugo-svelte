@@ -7,12 +7,12 @@ const production = !process.env.ROLLUP_WATCH;
 const hugo = production ? 'hugo' : 'hugo server --bind=0.0.0.0 -D';
 
 export default {
-	input: 'svelte/main.js',
+	input: 'visible/svelte/main.js',
 	output: {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'static/js/svelte.js'
+		file: 'visible/svelte/static/js/svelte.js'
 	},
 	plugins: [
 		svelte({
@@ -21,7 +21,7 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
 			css: css => {
-				css.write('static/css/svelte.css');
+				css.write('visible/svelte/static/css/svelte.css');
 			}
 		}),
 
@@ -42,6 +42,6 @@ export default {
 	],
 	watch: {
 		clearScreen: false,
-		include: 'svelte/**'
+		include: 'visible/svelte/**'
 	}
 };
