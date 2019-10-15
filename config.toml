@@ -4,13 +4,13 @@ title = "Hugo Svelte POC"
 
 archetypeDir = "visible/svelte/archetypes"
 assetDir = "visible/svelte/assets"
-# cacheDir = "cache" #may change in the future
+# cacheDir = "visible/svelte/cache" #may change in the future
 contentDir = "visible/svelte/content"
 dataDir = "visible/svelte/data"
 enableInlineShortcodes = true #this is false by default
 layoutDir = "visible/svelte/layouts"
 publishDir = "visible/svelte/public"
-relativeURLs = true #this is false by default
+relativeURLs = false #this is false by default
 resourceDir = "visible/svelte/resources" #may change in the future
 staticDir = "visible/svelte/static"
 themesDir = "visible/svelte/themes"
