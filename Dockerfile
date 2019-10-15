@@ -13,6 +13,7 @@ COPY ./init.sh /init.sh
 ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_ID}_Linux-64bit.tar.gz /tmp
 
 RUN tar -xf /tmp/${HUGO_ID}_Linux-64bit.tar.gz -C /tmp \
+    && mkdir /usr/local/sbin \
     && mv /tmp/hugo /usr/local/sbin/hugo \
     && rm -rf /tmp/${HUGO_ID}_linux_amd64 \
     && rm -rf /tmp/${HUGO_ID}_Linux-64bit.tar.gz \
