@@ -7,7 +7,7 @@ const production = !process.env.ROLLUP_WATCH;
 const hugo = production ? 'hugo' : 'hugo server --bind=0.0.0.0 -D';
 
 export default {
-	input: 'visible/svelte/main.js',
+	input: 'visible/svelte/appsvelte/main.js',
 	output: {
 		sourcemap: true,
 		format: 'iife',
@@ -42,6 +42,6 @@ export default {
 	],
 	watch: {
 		clearScreen: false,
-		include: 'visible/svelte/**'
+		include: 'visible/svelte/appsvelte/**'
 	}
 };
