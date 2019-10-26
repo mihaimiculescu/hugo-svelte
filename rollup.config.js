@@ -42,6 +42,6 @@ export default {
 	],
 	watch: {
 		clearScreen: false,
-		include: 'visible/svelte/appsvelte/**'
+		include: 'visible/svelte/**'
 	}
 };
