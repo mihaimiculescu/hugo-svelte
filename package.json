@@ -19,6 +19,6 @@
     "dev": "run-p start:dev autobuild hugo:dev",
     "start": "sirv public --single",
     "start:dev": "sirv public --single --dev",
-    "hugo:dev": "hugo server --bind=0.0.0.0 -D"
+    "hugo:dev": "hugo server --disableFastRender --bind=0.0.0.0 -D"
   }
 }
