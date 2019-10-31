@@ -3,20 +3,21 @@ FROM node:alpine
 
 EXPOSE 1313 5000 35729 3572
 
-# config
-ENV HUGO_VERSION=0.58.3
-ENV HUGO_TYPE=_extended
-ENV HUGO_ID=hugo${HUGO_TYPE}_${HUGO_VERSION}
-
 COPY ./init.sh /init.sh 
+COPY ./updatehugo.sh /updatehugo.sh 
 
-ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_ID}_Linux-64bit.tar.gz /tmp
+# config
+#ENV HUGO_VERSION=0.58.3
+#ENV HUGO_TYPE=_extended
+#ENV HUGO_ID=hugo${HUGO_TYPE}_${HUGO_VERSION}
 
-RUN tar -xf /tmp/${HUGO_ID}_Linux-64bit.tar.gz -C /tmp \
+ADD https://github.com/gohugoio/hugo/releases/download/v0.59.1/hugo_extended_0.59.1_Linux-64bit.tar.gz /tmp
+
+RUN tar -xf /tmp/hugo_extended_0.59.1_Linux-64bit.tar.gz -C /tmp \
     && mkdir /usr/local/sbin \
     && mv /tmp/hugo /usr/local/sbin/hugo \
-    && rm -rf /tmp/${HUGO_ID}_linux_amd64 \
-    && rm -rf /tmp/${HUGO_ID}_Linux-64bit.tar.gz \
+    && rm -rf /tmp/hugo_extended_0.59.1_linux_amd64 \
+    && rm -rf /tmp/hugo_extended_0.59.1_Linux-64bit.tar.gz \
     && rm -rf /tmp/LICENSE.md \
     && rm -rf /tmp/README.md \
     && apk add --update git asciidoctor libc6-compat libstdc++ \
