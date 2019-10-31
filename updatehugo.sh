@@ -1,12 +1,11 @@
 set -e
 echo "Welcome to the Hugo updater!"
 echo "Choose your version from https://github.com/gohugoio/hugo/releases"
-read -r -p "What Hugo version do you want? (ex: 0.59.0)" DESIRE
+    read -r -p "What Hugo version do you want? (ex: 0.59.0)" DESIRE
 #TODO: check version format with regex or smth
-if [[ $DESIRE != $(printenv HUGO_VERSION) ]]; then
     printf "Extended version (Y/N)?"
     read EXTN
-    if [[ $EXTN == "y" ]]; then
+    if [[ $EXTN == "y" -o "Y" -o "yes" -o "YES" -o "Yes" ]]; then
     EXTN="_extended"
     else
     EXTN=""
@@ -27,9 +26,3 @@ if [[ $DESIRE != $(printenv HUGO_VERSION) ]]; then
     rm -rf /tmp/hugo${EXTN}_${DESIRE}_Linux-64bit.tar.gz
     rm -rf /tmp/LICENSE.md
     rm -rf /tmp/README.md
-#    HUGO_VERSION=$DESIRE
-#    HUGO_TYPE=$EXTN
-#    HUGO_ID=hugo${HUGO_TYPE}_${HUGO_VERSION}
-else
-echo "Hugo version already present. Bye!"
-fi
