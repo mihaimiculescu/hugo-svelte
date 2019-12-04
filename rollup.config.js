@@ -2,6 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import rollup_start_dev from './rollup_start_dev';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -34,6 +35,9 @@ export default {
 			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),
 		commonjs(),
+		// In dev mode, call `npm run start:dev` once
+		// the bundle has been generated
+		!production && rollup_start_dev,
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
