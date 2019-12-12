@@ -5,7 +5,7 @@ echo "Choose your version from https://github.com/gohugoio/hugo/releases"
 #TODO: check version format with regex or smth
     printf "Extended version (Y/N)?"
     read EXTN
-    if [[ $EXTN == "y" -o "Y" -o "yes" -o "YES" -o "Yes" ]]; then
+    if [[ $EXTN == "y" -o "Y" -o "yes" -o "YES" -o "Yes" -o "yES"]]; then
     EXTN="_extended"
     else
     EXTN=""
