@@ -2,18 +2,18 @@
   "name": "svelte-app",
   "version": "1.0.1",
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "rollup": "^1.12.0",
-    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup": "^1.27.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-livereload": "^1.0.4",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^4.0.4",
-    "svelte": "^3.0.0"
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-terser": "^5.1.2",
+    "svelte": "^3.14.1"
   },
   "scripts": {
-    "build": "rollup -c; hugo",
-    "autobuild": "rollup -c -w",
-    "dev": "run-p autobuild hugo:dev",
-    "hugo:dev": "hugo server --disableFastRender --bind=0.0.0.0 -D"
+    "build": "rollup -c ; hugo",
+    "dev": "rollup -c -w",
+    "start": "hugo server --bind=0.0.0.0",
+    "start:dev": "hugo server --disableFastRender --bind=0.0.0.0 -D"
   }
 }
