@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "svelte-hugo-app",
   "version": "1.0.1",
   "devDependencies": {
     "rollup": "^1.27.13",
