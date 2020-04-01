@@ -5,7 +5,7 @@ echo "Choose your version from https://github.com/gohugoio/hugo/releases"
 #TODO: check version format with regex or smth
     printf "Extended version (Y/N)?"
     read EXTN
-    if [[ $EXTN == "y" -o "Y" -o "yes" -o "YES" -o "Yes" -o "yES"]]; then
+    if [[ $EXTN == "y" -o "Y" -o "yes" -o "YES" -o "Yes" ]]; then
     EXTN="_extended"
     else
     EXTN=""
@@ -16,11 +16,8 @@ echo "Choose your version from https://github.com/gohugoio/hugo/releases"
     tar -xf /tmp/hugo${EXTN}_${DESIRE}_Linux-64bit.tar.gz -C /tmp
     if [ ! -d /usr/local/sbin ]; then 
     mkdir /usr/local/sbin
-    else
-    rm -R /usr/local/sbin
-    mkdir /usr/local/sbin
     fi
-    mv /tmp/hugo /usr/local/sbin/hugo
+    mv -f /tmp/hugo /usr/local/sbin/hugo
     rm -rf /tmp/hugo${EXTN}_${DESIRE}_linux_amd64
     rm -rf /tmp/hugo${EXTN}_${DESIRE}_Linux-64bit.tar.gz
     rm -rf /tmp/hugo${EXTN}_${DESIRE}_Linux-64bit.tar.gz
